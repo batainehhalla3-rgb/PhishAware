@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishAware</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <h2>PhishAware</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="#about">About</a>
+        <a href="#tips">Security Tips</a>
+        <a href="#examples">Phishing Examples</a>
+        <a href="#link-check">Phishing Links</a>
+        <a href="#quiz">Quiz</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-label">CYBERSECURITY AWARENESS</span>
+        <h1>Think Before You Click!</h1>
+        <p>
+            Learn how to identify phishing attacks
+            and protect yourself from online threats.
+        </p>
+        <a href="#tips" class="start-button">Start Learning</a>
+    </div>
+
+    <div class="hero-icon">
+        <div class="shield-circle">
+            <span>🛡️</span>
+        </div>
+        <p>Stay Safe. Stay Aware.</p>
+    </div>
+</section>
+
+<!-- About This Project -->
+<section class="welcome" id="about">
+
+    <h2>About This Project</h2>
+
+    <p class="about-intro">
+        PhishAware is a cybersecurity awareness project
+        designed to help users recognize phishing attacks
+        and protect themselves from online threats.
+    </p>
+
+    <div class="about-details">
+
+        <div class="about-item">
+            <h3>🎯 Project Goal</h3>
+            <p>
+                To raise awareness about phishing attacks
+                and teach users how to identify suspicious messages and links.
+            </p>
+        </div>
+
+        <div class="about-item">
+            <h3>📚 What You Can Learn</h3>
+            <p>
+                Explore security tips, phishing examples,
+                educational link analysis, and an interactive quiz.
+            </p>
+        </div>
+
+        <div class="about-item">
+            <h3>💻 Technologies Used</h3>
+            <p>
+                Python, Flask, HTML, CSS, and JavaScript
+                were used to build this project.
+            </p>
+        </div>
+
+    </div>
+
+    <p class="about-note">
+        Note: The link analyzer uses educational examples only.
+        It does not scan or verify real URLs.
+    </p>
+
+</section>
+
+<!-- Security Tips -->
+<section class="tips" id="tips">
+    <h2>Security Tips</h2>
+    <p class="tips-subtitle">
+        Simple habits to keep yourself safe online.
+    </p>
+
+    <div class="tips-grid">
+
+        <div class="tip-item">
+            <div class="tip-icon">📧</div>
+            <h3>Check the Sender</h3>
+            <p>
+                Always check the sender's email address
+                before opening messages.
+            </p>
+        </div>
+
+        <div class="tip-item">
+            <div class="tip-icon">🔗</div>
+            <h3>Avoid Suspicious Links</h3>
+            <p>
+                Do not click on unknown or suspicious links.
+            </p>
+        </div>
+
+        <div class="tip-item">
+            <div class="tip-icon">🔒</div>
+            <h3>Never Share Passwords</h3>
+            <p>
+                Never share your passwords or personal
+                information with unknown sources.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Common Phishing Signs -->
+<section class="signs">
+    <h2>Common Phishing Signs</h2>
+
+    <div class="tip-card">
+        <h3>Urgent Messages</h3>
+        <p>Messages that ask you to act immediately.</p>
+    </div>
+
+    <div class="tip-card">
+        <h3>Suspicious Links</h3>
+        <p>Links that lead to unknown or unusual websites.</p>
+    </div>
+
+    <div class="tip-card">
+        <h3>Personal Information Requests</h3>
+        <p>Emails asking for your password or bank details.</p>
+    </div>
+</section>
+
+<!-- Phishing Examples -->
+<section class="examples" id="examples">
+    <h2>Phishing Examples</h2>
+
+    <p class="examples-subtitle">
+        Learn how to recognize suspicious messages.
+    </p>
+
+    <div class="examples-grid">
+
+        <div class="example-card">
+            <div class="example-header">
+                <span class="example-icon">📧</span>
+                <span class="example-tag">SUSPICIOUS MESSAGE</span>
+            </div>
+
+            <h3>Fake Bank Message</h3>
+
+            <div class="example-message">
+                <p>Your bank account is locked!</p>
+                <p>Verify your details immediately.</p>
+            </div>
+
+            <div class="example-warning">
+                <strong>⚠ Warning Signs</strong>
+                <p>Urgent requests for personal information.</p>
+            </div>
+        </div>
+
+        <div class="example-card">
+            <div class="example-header">
+                <span class="example-icon">🎁</span>
+                <span class="example-tag">SUSPICIOUS MESSAGE</span>
+            </div>
+
+            <h3>Fake Prize Message</h3>
+
+            <div class="example-message">
+                <p>Congratulations! You have won a free gift.</p>
+                <p>Send your personal details to claim it.</p>
+            </div>
+
+            <div class="example-warning">
+                <strong>⚠ Warning Signs</strong>
+                <p>Unexpected prizes and requests for personal data.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Phishing Link Analyzer -->
+<section class="link-check" id="link-check">
+
+    <h2>Phishing Link Analyzer</h2>
+
+    <p class="examples-subtitle">
+        Learn how to identify suspicious URLs.
+        Select an example to see its warning signs.
+    </p>
+
+    <div class="examples-grid">
+
+        <div class="example-card">
+            <h3>Example 1: Official Domain</h3>
+            <p class="link-example">https://www.wikipedia.org</p>
+            <button type="button" class="link-analyze-btn"
+                data-analysis="official">
+                Analyze Example
+            </button>
+        </div>
+
+        <div class="example-card">
+            <h3>Example 2: Misleading Domain</h3>
+            <p class="link-example">
+                https://paypal.com.security-check.example
+            </p>
+            <button type="button" class="link-analyze-btn"
+                data-analysis="misleading">
+                Analyze Example
+            </button>
+        </div>
+
+        <div class="example-card">
+            <h3>Example 3: IP Address Link</h3>
+            <p class="link-example">http://192.0.2.10/login</p>
+            <button type="button" class="link-analyze-btn"
+                data-analysis="ip">
+                Analyze Example
+            </button>
+        </div>
+
+        <div class="example-card">
+            <h3>Example 4: Shortened URL</h3>
+            <p class="link-example">https://short.example/Ab12</p>
+            <button type="button" class="link-analyze-btn"
+                data-analysis="short">
+                Analyze Example
+            </button>
+        </div>
+
+    </div>
+
+    <div id="link-analysis-result" class="example-warning"
+         style="display: none;" aria-live="polite">
+
+        <h3 id="analysis-title"></h3>
+        <p id="analysis-description"></p>
+
+    </div>
+
+    <p class="tips-subtitle">
+        These are educational examples only.
+        This feature does not scan or verify real URLs.
+    </p>
+
+</section>
+
+<!-- Quiz Section -->
+<section class="quiz" id="quiz">
+
+    <h2>Test Your Knowledge</h2>
+    <p>Look at the message below. Is it a phishing email?</p>
+
+    <div class="quiz-progress-info">
+        <span id="quiz-progress-text">Question 1 of 10</span>
+        <span id="quiz-progress-percent">10% completed</span>
+    </div>
+
+    <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+        <h3>Question 1: Normal Email</h3>
+        <p>
+            Hello, your appointment is confirmed for tomorrow.
+            Thank you for choosing our service.
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="1">
+            <button type="submit" value="legitimate">Legitimate</button>
+            <button type="submit" value="phishing">Phishing</button>
+        </form>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+        <h3>Question 2: Suspicious Email</h3>
+        <p>
+            You receive an email saying:
+            "Your bank account will be blocked.
+            Click here immediately to verify your password."
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="2">
+            <button type="submit" value="phishing">Phishing</button>
+            <button type="submit" value="legitimate">Legitimate</button>
+        </form>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+        <h3>Question 3: Suspicious Attachment</h3>
+        <p>
+            You receive an email from an unknown sender
+            with an attachment named Free_Gift.exe.
+            What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="3">
+            <button type="submit" value="open">Open the attachment</button>
+            <button type="submit" value="download">Download it immediately</button>
+            <button type="submit" value="report">Avoid opening it and report the email</button>
+        </form>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+        <h3>Question 4: Fake Link</h3>
+        <p>
+            You receive an email asking you to verify your bank account.
+            The link looks similar to your bank's official website
+            but has a slightly different address.
+            What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="4">
+            <button type="submit" value="click">Click the link</button>
+            <button type="submit" value="ignore">Ignore the warning signs</button>
+            <button type="submit" value="verify">Visit the official bank website directly</button>
+        </form>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+        <h3>Question 5: Password Theft</h3>
+        <p>
+            You receive an email asking you to enter
+            your password to prevent your account from being closed.
+            What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="5">
+            <button type="submit" value="enter">Enter my password</button>
+            <button type="submit" value="share">Share my password</button>
+            <button type="submit" value="report">Ignore and report the email</button>
+        </form>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+        <h3>Question 6: Fake Prize</h3>
+        <p>
+            You receive a message saying you won a free
+            smartphone, but you must pay a small fee
+            to receive your prize. What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="6">
+            <button type="submit" value="pay">Pay the fee</button>
+            <button type="submit" value="click">Click the provided link</button>
+            <button type="submit" value="ignore">Ignore and report the message</button>
+        </form>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+        <h3>Question 7: Fake Bank Alert</h3>
+        <p>
+            You receive a text message claiming to be
+            from your bank. It says your account will be
+            blocked unless you verify your details immediately.
+            What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="7">
+            <button type="submit" value="click">Click the link immediately</button>
+            <button type="submit" value="reply">Reply with my bank details</button>
+            <button type="submit" value="contact">Contact the bank through its official number</button>
+        </form>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+        <h3>Question 8: Fake Company Message</h3>
+        <p>
+            You receive an email from a company claiming
+            you have won a special offer. The sender's
+            email address looks suspicious. What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="8">
+            <button type="submit" value="click">Click the offer link</button>
+            <button type="submit" value="official">Check the company's official website</button>
+            <button type="submit" value="reply">Reply with my personal details</button>
+        </form>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="quiz-card">
+        <h3>Question 9: Personal Information Theft</h3>
+        <p>
+            You receive a message from an unknown sender
+            asking for your full name, address, and ID number
+            to receive a free gift. What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="9">
+            <button type="submit" value="share">Share my personal information</button>
+            <button type="submit" value="ignore">Ignore and report the message</button>
+            <button type="submit" value="reply">Reply and ask for more details</button>
+        </form>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="quiz-card">
+        <h3>Question 10: Money Transfer Scam</h3>
+        <p>
+            You receive an email from someone pretending
+            to be your manager. They urgently ask you
+            to transfer money to a new bank account.
+            What should you do?
+        </p>
+
+        <form class="quiz-form">
+            <input type="hidden" name="question" value="10">
+            <button type="submit" value="transfer">Transfer the money immediately</button>
+            <button type="submit" value="verify">Verify the request through another trusted channel</button>
+            <button type="submit" value="reply">Reply to the email and send the money</button>
+        </form>
+    </div>
+
+    <!-- Final Result -->
+    <div id="final-result" class="final-result" style="display: none;">
+
+        <h2>Your Quiz Result</h2>
+
+        <p class="final-score">
+            <span id="score-value">0/10</span>
+        </p>
+
+        <p class="final-percentage">
+            <span id="percentage-value">0%</span>
+        </p>
+
+        <p id="result-message"></p>
+
+        <!-- Quiz Review -->
+        <div id="quiz-review"></div>
+
+        <button type="button" id="try-again">Try Again</button>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <h3>PhishAware</h3>
+    <p>Stay alert. Think before you click.</p>
+    <p class="copyright">
+        ©️ 2026 PhishAware. All Rights Reserved.
+    </p>
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Phishing Link Analyzer
+    const analysisData = {
+        official: {
+            title: "Legitimate Domain Example",
+            description:
+                "The domain shown is wikipedia.org. This is an example of a recognized official domain. However, always verify the domain carefully before entering personal information."
+        },
+
+        misleading: {
+            title: "Suspicious: Misleading Domain",
+            description:
+                "The actual registered domain is example, not paypal.com. The name paypal appears as part of a subdomain and may be used to mislead users."
+        },
+
+        ip: {
+            title: "Warning: IP Address Link",
+            description:
+                "This example uses an IP address instead of a familiar domain name. This can be a warning sign, especially in unexpected messages. An IP address alone does not prove a link is malicious."
+        },
+
+        short: {
+            title: "Warning: Shortened URL",
+            description:
+                "Shortened URLs hide the final destination. This does not automatically mean the link is malicious, but you should verify where it leads before opening it."
+        }
+    };
+
+    const analysisButtons = document.querySelectorAll(".link-analyze-btn");
+    const analysisResult = document.getElementById("link-analysis-result");
+    const analysisTitle = document.getElementById("analysis-title");
+    const analysisDescription = document.getElementById("analysis-description");
+
+    analysisButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+
+            const type = button.dataset.analysis;
+            const result = analysisData[type];
+
+            if (!result) return;
+
+            analysisTitle.textContent = result.title;
+            analysisDescription.textContent = result.description;
+
+            analysisResult.style.display = "block";
+
+            analysisResult.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        });
+    });
+
+
+    // Quiz Setup
+    const quizSection = document.querySelector(".quiz");
+    const cards = quizSection.querySelectorAll(".quiz-card");
+
+    let currentQuestion = 1;
+    const selectedAnswers = {};
+
+    const progressText = document.getElementById("quiz-progress-text");
+    const progressPercent = document.getElementById("quiz-progress-percent");
+    const progressFill = document.getElementById("quiz-progress-fill");
+
+    const finalResult = document.getElementById("final-result");
+    const tryAgainButton = document.getElementById("try-again");
+
+    // Create Navigation Buttons
+    const navigation = document.createElement("div");
+
+    navigation.style.display = "flex";
+    navigation.style.justifyContent = "center";
+    navigation.style.gap = "15px";
+    navigation.style.margin = "25px 0";
+
+    const previousButton = document.createElement("button");
+    previousButton.type = "button";
+    previousButton.textContent = "Previous";
+
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.textContent = "Next";
+
+    navigation.appendChild(previousButton);
+    navigation.appendChild(nextButton);
+
+    quizSection.appendChild(navigation);
+
+
+    // Show Question
+    function showQuestion(number, scroll = true) {
+
+        currentQuestion = number;
+
+        const percentage = Math.round((number / cards.length) * 100);
+
+        progressText.textContent =
+            "Question " + number + " of " + cards.length;
+
+        progressPercent.textContent = percentage + "% completed";
+        progressFill.style.width = percentage + "%";
+
+        cards.forEach(function(card) {
+            card.style.display = "none";
+        });
+
+        const selectedCard = cards[number - 1];
+        selectedCard.style.display = "";
+
+        const form = selectedCard.querySelector(".quiz-form");
+        const questionNumber = String(number);
+
+        form.querySelectorAll("button").forEach(function(button) {
+
+            button.classList.remove("selected-answer");
+
+            if (selectedAnswers[questionNumber] === button.value) {
+                button.classList.add("selected-answer");
+            }
+        });
+
+        previousButton.disabled = number === 1;
+
+        nextButton.disabled = false;
+
+        nextButton.textContent =
+            number === cards.length ? "Show Result" : "Next";
+
+        if (scroll) {
+            selectedCard.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+    }
+
+
+    // Previous Button
+    previousButton.addEventListener("click", function() {
+
+        if (currentQuestion > 1) {
+            showQuestion(currentQuestion - 1);
+        }
+
+    });
+
+
+    // Next Button
+    nextButton.addEventListener("click", function() {
+
+        if (currentQuestion < cards.length) {
+            showQuestion(currentQuestion + 1);
+        } else {
+            submitQuiz();
+        }
+
+    });
+
+
+    // Save Selected Answers
+    document.querySelectorAll(".quiz-form").forEach(function(form) {
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const questionNumber = form.querySelector(
+                'input[name="question"]'
+            ).value;
+
+            const answer = event.submitter.value;
+
+            selectedAnswers[questionNumber] = answer;
+
+            form.querySelectorAll("button").forEach(function(button) {
+
+                button.classList.remove("selected-answer");
+
+                if (button.value === answer) {
+                    button.classList.add("selected-answer");
+                }
+
+            });
+
+        });
+
+    });
+
+
+    // Submit Quiz and Show Result
+    async function submitQuiz() {
+
+        if (Object.keys(selectedAnswers).length !== cards.length) {
+
+            const firstUnanswered = cards.findIndex(function(card, index) {
+                return !selectedAnswers[String(index + 1)];
+            });
+
+            alert("Please answer all questions before showing your result.");
+
+            showQuestion(firstUnanswered + 1);
+            return;
+        }
+
+        nextButton.disabled = true;
+        nextButton.textContent = "Calculating...";
+
+        try {
+
+            const response = await fetch("/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    answers: selectedAnswers
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Could not calculate the result.");
+            }
+
+            // Hide Questions
+            cards.forEach(function(card) {
+                card.style.display = "none";
+            });
+
+            navigation.style.display = "none";
+
+            // Show Score
+            document.getElementById("score-value").textContent =
+                data.score + "/" + data.total;
+
+            document.getElementById("percentage-value").textContent =
+                data.percentage + "%";
+
+            let message = "";
+
+            if (data.percentage >= 80) {
+                message = "Excellent! You have a good understanding of phishing awareness.";
+            } else if (data.percentage >= 50) {
+                message = "Good effort! Keep learning how to recognize phishing attacks.";
+            } else {
+                message = "Keep practicing! Review the security tips and try again.";
+            }
+
+            document.getElementById("result-message").textContent = message;
+
+
+            // Show Review of All Questions
+            const reviewContainer = document.getElementById("quiz-review");
+
+            reviewContainer.innerHTML = "";
+
+            data.review.forEach(function(item) {
+
+                const reviewCard = document.createElement("div");
+                reviewCard.className = "tip-card";
+
+                const questionTitle = document.createElement("h3");
+                questionTitle.textContent = item.question;
+
+                const status = document.createElement("p");
+
+                if (item.is_correct) {
+                    status.textContent = "Correct!";
+                    status.style.color = "green";
+                } else {
+                    status.textContent = "Incorrect!";
+                    status.style.color = "red";
+                }
+
+                status.style.fontWeight = "bold";
+
+                const userAnswer = document.createElement("p");
+                userAnswer.textContent =
+                    "Your Answer: " + item.user_answer;
+
+                const correctAnswer = document.createElement("p");
+                correctAnswer.textContent =
+                    "Correct Answer: " + item.correct_answer;
+
+                reviewCard.appendChild(questionTitle);
+                reviewCard.appendChild(status);
+                reviewCard.appendChild(userAnswer);
+                reviewCard.appendChild(correctAnswer);
+
+                if (!item.is_correct) {
+
+                    const explanation = document.createElement("p");
+
+                    explanation.textContent =
+                        "Why? " + item.explanation;
+
+                    reviewCard.appendChild(explanation);
+                }
+
+                reviewContainer.appendChild(reviewCard);
+
+            });
+
+
+            // Display Final Result
+            finalResult.style.display = "block";
+
+            finalResult.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        } catch (error) {
+
+            console.error("Quiz submission error:", error);
+
+            alert("Something went wrong: " + error.message);
+
+            nextButton.disabled = false;
+            nextButton.textContent = "Show Result";
+
+        }
+
+    }
+
+
+    // Try Again Button
+    tryAgainButton.addEventListener("click", function() {
+
+        // Clear Answers
+        Object.keys(selectedAnswers).forEach(function(key) {
+            delete selectedAnswers[key];
+        });
+
+        // Remove Selected Answer Styling
+        document.querySelectorAll(".quiz-form button").forEach(function(button) {
+            button.classList.remove("selected-answer");
+        });
+
+        // Clear Previous Review
+        document.getElementById("quiz-review").innerHTML = "";
+
+        // Hide Result
+        finalResult.style.display = "none";
+
+        // Show Navigation Again
+        navigation.style.display = "flex";
+
+        nextButton.disabled = false;
+
+        // Start From Question 1
+        showQuestion(1);
+
+    });
+
+
+    // Start Quiz
+    showQuestion(1, false);
+
+});
+</script>
+
+</body>
+</html>
