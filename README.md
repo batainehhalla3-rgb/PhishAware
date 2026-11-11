@@ -24,21 +24,23 @@ The goal of this project is to educate users about phishing and encourage safer 
 - CSS
 - JavaScript
 
-## How to Run
+How to Run
 
-1. Install Python.
-2. Install Flask:
+1. Install Python from https://www.python.org/downloads/
+2. Download or clone this repository.
+3. Open the project folder in VS Code or Terminal.
+4. Install Flask:pip install flask
 
-   pip install flask
+pip install flask
 
-3. Run the application:
+5. Run the application:
+6. python app.py
 
-   python app.py
+python app.py
 
-4. Open your browser and visit:
+6. Open your browser and visit:
+    http://127.0.0.1:5000
 
-   http://127.0.0.1:5000
-
-## Project Name
+Project Name
 
 PhishAware
