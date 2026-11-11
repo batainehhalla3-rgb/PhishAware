@@ -645,28 +645,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Save Selected Answers
+   // Save Selected Answers
     document.querySelectorAll(".quiz-form").forEach(function(form) {
 
-        form.addEventListener("submit", function(event) {
+        const questionNumber = form.querySelector(
+            'input[name="question"]'
+        ).value;
 
-            event.preventDefault();
+        const answerButtons = form.querySelectorAll("button");
 
-            const questionNumber = form.querySelector(
-                'input[name="question"]'
-            ).value;
+        answerButtons.forEach(function(button) {
 
-            const answer = event.submitter.value;
+            // Prevent form submission on mobile and desktop
+            button.type = "button";
 
-            selectedAnswers[questionNumber] = answer;
+            button.addEventListener("click", function(event) {
 
-            form.querySelectorAll("button").forEach(function(button) {
+                event.preventDefault();
 
-                button.classList.remove("selected-answer");
+                // Save selected answer
+                selectedAnswers[questionNumber] = button.value;
 
-                if (button.value === answer) {
-                    button.classList.add("selected-answer");
-                }
+                // Update selected answer styling
+                answerButtons.forEach(function(answerButton) {
+
+                    answerButton.classList.remove("selected-answer");
+
+                });
+
+                button.classList.add("selected-answer");
 
             });
 
